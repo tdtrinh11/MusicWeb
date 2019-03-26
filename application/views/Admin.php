@@ -105,8 +105,38 @@
 			</div>
 		</div>
 		<!-- end phần menu trên -->
-	
-		
+		<!-- phần ảnh nền -->
+		<div class="content">
+			<div class="artist-inner">
+				<div class="artist-img">
+					<img src="image/artist3.jpg" alt="" class="rounded-circle img-polaroid" width="100px" height="100px">
+				</div>
+				<h3 class="ng-binding">King of the mood</h3>
+				<h5 class="ng-binding">Great music inspired by early electronic sounds, combining the symphony of classical instruments </h5>
+				<h5 class="ng-binding">and complete surrounding</h5>
+				<div class="artist-style">
+					<div class="artist-genre ng-scope">
+						<i class="fas fa-circle"></i>
+						<span class="ng-binding">Pop</span>
+					</div>
+					<div class="artist-genre ng-scope">
+						<i class="fas fa-circle"></i>
+						<span class="ng-binding">Rock</span>
+					</div>
+					<div class="artist-genre ng-scope">
+						<i class="fas fa-circle"></i>
+						<span class="ng-binding">Folk</span>
+					</div>
+				</div>
+				<div class="contact-me">
+					<a href="" class="icon"><i class="fab fa-facebook-f"></i></a>
+					<a href="" class="icon"><i class="fab fa-google-plus-g"></i></a>
+					<a href="" class="icon"><i class="fab fa-twitter"></i></a>
+				</div>
+			</div>
+
+		</div>
+		<!-- end phần ảnh nền -->
 	</div>
 	<!-- end phần nội dung -->
 	<script type="text/javascript" src="1.js"></script>
