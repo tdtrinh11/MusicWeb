@@ -1,5 +1,124 @@
 * { margin: 0; padding: 0; }
 
+p.tdqltcs {
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+._1casi {
+    position: relative;
+    cursor: pointer;
+}
+
+.xemthem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.3);
+    color: green;
+    font-size: 15px;
+    font-family: 'Nunito', sans-serif;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+    /* transform: scale(0.3); */
+}
+
+.xemthem.hienthi {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.anhcasi {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img.anhcs {
+    width: 185px;
+}
+
+.row.form_tenbh,.form_tencs,.form_tenns,.form_theloai,.form_audio,.form_ha,.form_lbh {
+    margin-bottom: 15px;
+}
+
+.themnhac {
+    font-size: 17px;
+}
+
+.modal-content.content_thembh {
+    color: gray;
+    font-family: 'Nunito', sans-serif;
+}
+
+.modal-content.content_chinhsua {
+    color: gray;
+    font-family: 'Nunito', sans-serif;
+}
+
+.modal-content.content_chitiet {
+    color: gray;
+    font-family: 'Nunito', sans-serif;
+}
+
+.chinh_sua,.chi_tiet,.xoa {
+    font-size: 12px;
+}
+
+.phantrang {
+    margin-top: 14px;
+}
+
+tr {height: 55px;}
+
+td.chuc_nang {
+    text-align: center;
+}
+
+td.audio {
+    text-align: center;
+}
+
+td.hinh_anh {
+    text-align: center;
+}
+
+td.the_loai {
+    text-align: center;
+}
+
+td.ten_ca_si {
+    text-align: center;
+}
+
+thead {
+    text-align: center;
+    font-size: 14px;
+}
+
+td.ten_bai_hat {
+    text-align: center;
+}
+
+table.table-striped.dsbh {
+    width: 100%;
+}
+
+img.hinh_anh_bai_hat {
+    width: 50px;
+}
+
+.tim_bai_hat {
+    padding-left: 0;
+}
+
 .col-xs-3.col-sm-3.col-md-3.col-lg-3.tim_bai_hat {
 }
 
@@ -22,7 +141,7 @@ a.nav-link {}
 .tab-content {
     background-color: white;
     color: gray;
-    height: 500px;
+    height: 519px;
 }
 
 p.tdqlkn {
@@ -383,3 +502,8 @@ input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width
 .effect-8:focus ~ .focus-border:after{width: 100%; transition: 0.3s;}
 .effect-8:focus ~ .focus-border i:before,
 .effect-8:focus ~ .focus-border i:after{height: 100%; transition: 0.4s;}*/
+
+
+.fade{
+    transition: opacity .15s linear;
+}
