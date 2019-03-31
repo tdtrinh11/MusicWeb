@@ -142,6 +142,7 @@ a.nav-link {}
     background-color: white;
     color: gray;
     height: 519px;
+    overflow-y: scroll;
 }
 
 p.tdqlkn {
@@ -489,7 +490,7 @@ input[type="text"]{font: 15px/24px 'Muli', sans-serif; color: #333; width: 100%;
 
 :focus{outline: none;}
 
-.col-3{float: left; width: 27.33%; margin: 40px 3%; position: relative;} /* necessary to give position: relative to parent. */
+.col-3{float: left;width: 27.33%;/* margin: 40px 3%; */position: relative;} /* necessary to give position: relative to parent. */
 input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width: 100%; box-sizing: border-box; letter-spacing: 1px;}
 
 /*.effect-8 ~ .focus-border:before,
