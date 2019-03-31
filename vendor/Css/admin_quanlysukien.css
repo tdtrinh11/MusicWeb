@@ -1,0 +1,427 @@
+* { margin: 0; padding: 0; }
+
+.modal-body.body_chitiet {
+    color: gray;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+}
+
+.chinhsuask {
+    color: gray;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;
+}
+
+.row.form_tensk,.form_des,.form_ha {
+    margin-bottom: 15px;
+}
+
+.modal-header {
+    color: gray;
+}
+
+.body_themsk {
+    font-family: 'Nunito', sans-serif;
+    color: gray;
+    font-size: 19px;
+}
+
+.phantrang {
+    margin-top: 15px;
+}
+
+
+.row.head_sk {
+    padding-top: 17px;
+}
+
+.xoa {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.chi_tiet {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.chinh_sua {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.chucnang_sk {
+}
+
+._1sukien {
+    padding: 8px 0px;
+    border-bottom: 1px solid #8080802e;
+}
+
+.tdsk {
+    font-size: 20px;
+    color: red;
+}
+
+.thongtinsk {}
+
+.anhsukien {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.anhsukien img {
+    width: 150px;
+}
+
+p.tdqlsk {
+    text-align: center;
+    font-size: 31px;
+    /* margin-top: 22px; */
+}
+
+.quanlysukien {
+    color: black;
+    font-family: 'Nunito', sans-serif;
+    overflow-y: scroll;
+    height: 100%;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #E8E8E8;
+    color: #cdcdcd;
+    font-size: 12px;
+    text-rendering: optimizeLegibility!important;
+    -webkit-font-smoothing: antialiased!important;
+}
+
+.menutrai {
+    background: #2a2a2a;
+    width: 240px;
+    top: 0;
+    padding: 0;
+    position: absolute;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: -blackberry-touch;
+    z-index: 11;
+}
+
+.menutrai .anhtop {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    height: 65px;
+    line-height: 65px;
+    text-align: center;
+    z-index: 10;
+}
+
+.anhtop img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+.sidebar-header {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    font-size: 15px;
+    border-bottom: 1px solid #3a3f48;
+
+}
+
+.sidebar-header .user-pic {
+    float: left;
+    width: 77px;
+}
+
+.sidebar-header img.img-responsive.img-rounded {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    margin-right: 15px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.user-info span.user-name {
+    float: left;
+    font-size: 18px;
+    color: #d5c9c9;
+}
+
+span.user-role {
+    float: left;
+}   
+
+.user-info span.status {
+    float: left;
+    font-size: 12px;
+}
+
+.status i.fas.fa-circle {
+    font-size: 8px;
+    margin-right: 4px;
+    color: #5cb85c;
+}
+
+.sidebar-menu {
+    padding: 20px;
+    padding-right: 0;
+}
+
+.sidebar-menu ul li {
+    list-style-type: none;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.sidebar-menu li.header-menu {
+    height: 20px;
+    line-height: 20px;
+    width: 100%;
+    font-size: 20px;
+    padding-left: 0;
+}
+
+.sidebar-menu a.menu-chinh {
+    text-decoration: none;
+    color: #cdcdcd;
+    font-size: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.sidebar-menu a.menu-chinh:hover {
+    color: #fff;
+}
+
+.sidebar-menu span.name-menu {
+    margin-left: 15px;
+}
+
+.noidungchinh {
+    width: 100%;
+    height: 100%;
+}
+
+.menu-tren {
+    width: 100%;
+    position: fixed;
+    height: 65px;
+    background-color: #fff;
+    line-height: 65px;
+    z-index: 10;
+}
+
+.noidungchinh .menu-button {
+    float: left;
+    position: relative;
+    left: 240px;
+    display: none;
+}
+
+.menu-button a#menu-toggle {
+    background: #2a2a2a;
+    color: white;
+}
+
+.menu-tren .admin {
+    float: right;
+    position: relative;
+    transition: all 0.4s;
+}
+
+.menu-tren .admin img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    z-index: 10;
+    margin-right: 10px;
+}
+
+.admin-info {
+    position: absolute;
+    right: 2px;
+    width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s;
+}
+
+.admin-info:after {
+    content: "";
+    position: absolute;
+    top: -19px;
+    right: 11px;
+    height: 0;
+    border: 11px solid #ffd70000;
+    border-bottom-color: #fff;
+    
+}
+
+.admin-info.ra {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.4s ease 0s;
+}
+
+.admin-info li.list-group-item {
+    height: 40px;
+    line-height: 20px;
+    display: block;
+}
+
+.admin-info ul li a {
+    color: black;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.admin-info i.fas {
+    float: right;
+    margin-right: -11px;
+}
+
+.noidungchinh .content {
+    width: 100%;
+    position: inherit;
+    height: 100%;
+    /* left: 240px; */
+    padding-left: 240px;
+    /* top: 65px; */
+    padding-top: 65px;
+    display: table;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    color: #fff;
+}
+
+
+.artist-inner {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    color: #fff;
+    position: relative;
+    /*display: inline-block;
+    width: 50%;
+    max-width: 70%;
+    margin: 0;
+    vertical-align: middle;
+    position: relative;*/
+}
+
+img.rounded-circle.img-polaroid {
+    border: 3px solid;
+    border-bottom-color: transparent;
+    padding: 3px;
+}
+
+.artist-genre.ng-scope {
+    display: inline-table;
+    margin-right: 10px;
+}
+
+.artist-style i.fas.fa-circle {
+    font-size: 7px;
+    margin-right: 6px;
+}
+
+.artist-style span.ng-binding {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.contact-me a.icon {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    line-height: 40px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.contact-me a.icon:hover {
+    background: #ffffff;
+    transition: all 0.4s;
+    color: #18bc9c;
+}
+
+.contact-me {
+    padding-top: 4%;
+}
+
+@media only screen and (max-width: 768px) {
+    .noidungchinh .content {
+        padding-left: 0;
+    }
+    .menutrai#sidebar {
+        opacity: 0;
+        visibility: hidden;
+        transition:all 0.4s ease 0s;
+        transform:rotate3d(360deg);
+    }
+    .noidungchinh .menu-button {
+        display: block;
+        left: 2px;
+        z-index: 15;
+    }
+
+    #sidebar.active {
+        position: fixed;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.4s ease 0s;
+        transform: rotate3d(360deg);
+        top: 65px;
+        z-index: 100;
+    }
+
+    .anhtop {
+        display: none;
+    }
+
+    .noidungchinh .content {
+        left: 0;
+    }
+
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 577px){
+    .input_sk{
+        margin-left: 85px;
+    }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 769px){
+    .input_sk{
+        margin-left: 120px;
+    }
+}
+
+
+
