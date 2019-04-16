@@ -1,17 +1,17 @@
 * { margin: 0; padding: 0; }
 
 html, body {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 body {
-	overflow: hidden;
-	font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
-	background-color: #E8E8E8;
-	color: #cdcdcd;
-	font-size: 14px;
-	text-rendering: optimizeLegibility!important;
+    overflow: hidden;
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #E8E8E8;
+    color: #cdcdcd;
+    font-size: 14px;
+    text-rendering: optimizeLegibility!important;
     -webkit-font-smoothing: antialiased!important;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 .menutrai .anhtop {
-	position: relative;
+    position: relative;
     width: 100%;
     background: #fff;
     height: 65px;
@@ -69,14 +69,14 @@ body {
 }
 
 .user-info span.user-name {
-	float: left;
+    float: left;
     font-size: 18px;
     color: #d5c9c9;
 }
 
 span.user-role {
     float: left;
-}	
+}   
 
 .user-info span.status {
     float: left;
@@ -120,7 +120,7 @@ span.user-role {
 }
 
 .sidebar-menu a.menu-chinh:hover {
-	color: #fff;
+    color: #fff;
 }
 
 .sidebar-menu span.name-menu {
@@ -171,12 +171,12 @@ span.user-role {
 }
 
 .admin-info {
-	position: absolute;
-	right: 2px;
-	width: 180px;
-	opacity: 0;
-	visibility: hidden;
-	transition: all 0.4s;
+    position: absolute;
+    right: 2px;
+    width: 180px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s;
 }
 
 .admin-info:after {
@@ -191,7 +191,7 @@ span.user-role {
 }
 
 .admin-info.ra {
-	opacity: 1;
+    opacity: 1;
     visibility: visible;
     transition: all 0.4s ease 0s;
 }
@@ -283,33 +283,33 @@ a.btn.btn-default.delete:hover {
 }
 
 @media only screen and (max-width: 768px) {
-	.noidungchinh .content {
-		padding-left: 0;
-	}
-	.menutrai#sidebar {
-		opacity: 0;
+    .noidungchinh .content {
+        padding-left: 0;
+    }
+    .menutrai#sidebar {
+        opacity: 0;
         visibility: hidden;
         transition:all 0.4s ease 0s;
         transform:rotate3d(360deg);
-	}
+    }
     .noidungchinh .menu-button {
-    	display: block;
-    	left: 2px;
-    	z-index: 15;
+        display: block;
+        left: 2px;
+        z-index: 15;
     }
 
-	#sidebar.active {
-		position: fixed;
-	    opacity: 1;
-	    visibility: visible;
-	    transition: all 0.4s ease 0s;
-	    transform: rotate3d(360deg);
-	    top: 65px;
-	    z-index: 100;
-	}
+    #sidebar.active {
+        position: fixed;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.4s ease 0s;
+        transform: rotate3d(360deg);
+        top: 65px;
+        z-index: 100;
+    }
 
-	.anhtop {
-		display: none;
-	}
+    .anhtop {
+        display: none;
+    }
 
 }
