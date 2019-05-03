@@ -26,7 +26,7 @@ class Song extends CI_Model {
 
 	public function getAllSong()
 	{
-		$info = $this->db->get('song',5,0);
+		$info = $this->db->get('song',4,0);
 		$info = $info->result_array();
 
 		return $info;
@@ -38,6 +38,52 @@ class Song extends CI_Model {
 
 		$sotrang = ceil($result/$soSongTrongMotTrang);
 		return $sotrang;
+	}
+
+	public function loadSongTheoTrang($trang, $soSongTrongMotTrang)
+	{
+		$vitri = ($trang - 1)*$soSongTrongMotTrang;
+
+		$info = $this->db->get('song',$soSongTrongMotTrang, $vitri);
+		$info = $info->result_array();
+
+		return $info;
+	}
+
+	public function deleteSong($sid)
+	{
+		$sql = 'delete from Song where sid ='.$sid;
+		return $this->db->query($sql);
+	}
+
+	public function EditSong($sid,$tbh_sua,$tcs_sua,$tns_sua,$tl_sua,$audio_sua,$ha_sua,$lyric_sua)
+	{
+
+		if(empty($audio_sua) && empty($ha_sua)){
+			$sql = "update Song set song_name='".$tbh_sua."',artist='".$tns_sua."',singer='".$tcs_sua."',type='".$tl_sua."',lyric='".$lyric_sua."' where sid='".$sid."'";
+			return $this->db->query($sql);
+		}
+		elseif(empty($audio_sua) && empty($ha_sua) == false){
+			$sql = "update Song set song_name='".$tbh_sua."',artist='".$tns_sua."',singer='".$tcs_sua."',type='".$tl_sua."',lyric='".$lyric_sua."',URL_IMG='".$ha_sua."' where sid='".$sid."'";
+			return $this->db->query($sql);
+		}
+		elseif(empty($ha_sua) && empty($audio_sua) == false){
+			$sql = "update Song set song_name='".$tbh_sua."',artist='".$tns_sua."',singer='".$tcs_sua."',type='".$tl_sua."',lyric='".$lyric_sua."',URL='".$audio_sua."' where sid='".$sid."'";
+			return $this->db->query($sql);
+		}
+		else{
+			$sql = "update Song set song_name='".$tbh_sua."',artist='".$tns_sua."',singer='".$tcs_sua."',type='".$tl_sua."',lyric='".$lyric_sua."',URL='".$audio_sua."',URL='".$audio_sua."' where sid='".$sid."'";
+			return $this->db->query($sql);
+		}
+	}
+
+	public function findByName($song_name)
+	{
+		$sql = "select * from Song where song_name LIKE N'%".$song_name."%'";
+		$dl_tk = $this->db->query($sql);
+
+		$dl_tk = $dl_tk->result_array();
+		return $dl_tk;
 	}
 
 }
