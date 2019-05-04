@@ -4,29 +4,39 @@
 	<title>Admin</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>vendor/Js/jquery-3.3.1.min.js"></script>
 	<!-- <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
 	<script type="text/javascript" src="vendor/js/bootstrap.min.js"></script> -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>vendor/Bootstrap/css/bootstrap.min.css">
+	<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	 -->
+	 <script type="text/javascript" src="<?php echo base_url();?>vendor/Bootstrap/js/bootstrap.min.js"></script>
 	
-	<link rel="stylesheet" href="vendor/font-awesome.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="admin_thongke.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/vendor/Css/Admin_Thongke.css">
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 </head>
 <body>
-	
+
+	<?php 
+		$uri = $_SERVER['REQUEST_URI'];
+		$uri = explode('/',$uri);
+		$trangHienTai = end($uri);
+		if(!is_numeric($trangHienTai)) {
+			$trangHienTai = 1;
+		}
+	?>
 	<!-- phần menu trai -->
 	<div class="menutrai" id="sidebar">
 
 		<div class="anhtop">
-			<a href=""><img src="image/main.jpg" alt=""></a>
+			<a href=""><img src="<?php echo base_url(); ?>/vendor/image/main.jpg" alt=""></a>
 		</div>
 		
 		<div class="sidebar-header">
 			<div class="user-pic">
-				<img src="image/avt.jpg" alt="" class="img-responsive img-rounded" width="50px" height="50px">
+				<img src="<?php echo base_url(); ?>/vendor/image/avt.jpg" alt="" class="img-responsive img-rounded" width="50px" height="50px">
 			</div>
 			<div class="user-info">
 				<span class="user-name">Music
@@ -89,7 +99,7 @@
 				<a id="menu-toggle" href="#" class="btn btn-default btn-lg toggle"><i class="fa fa-bars"></i></a>
 			</div>
 			<div class="admin">
-				<a href="#" class="admin-avt"><img src="image/admin.jpg" alt="" width="40px" height="40px"></a>
+				<a href="#" class="admin-avt"><img src="<?php echo base_url(); ?>/vendor/image/admin.jpg" alt="" width="40px" height="40px"></a>
 				<div class="admin-info">
 					 <ul class="list-group">
 					 	<li class="list-group-item"><a href="">
@@ -135,12 +145,18 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<!-- Tab panes -->
-						  <div class="tab-content">
+						  <div class="tab-content clearfix">
 						    <div id="home" class="container tab-pane active"><br>
 						     	<div class="row">
 						     		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 						     			<h2>Danh sách bài hát</h2>
 						     		</div>
+						     		<div class="timkiem float-right">
+										<input class="form-control" id="search-key" type="text" placeholder="Nhập tên bài hát" aria-label="Search" name="key">
+										<button class="btn btn-info" type="submit" id="search">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</div>
 						     		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 danhsachbh">
 						     			<table class="table">
 						     				<thead>
@@ -155,99 +171,41 @@
 						     					</tr>
 						     				</thead>
 						     				<tbody>
-						     					<tr>
-						     						<td>1</td>
-						     						<td>If you</td>
-						     						<td>Soul king</td>
-						     						<td>Free</td>
-						     						<td class="hinhanh"><img src="image/brook.jpg" width="30px" height="30px" alt=""></td>
-						     						<td>getslinkvip.com</td>
-						     						<td>1.000.000.000</td>
-						     					</tr>
-						     					<tr>
-						     						<td>1</td>
-						     						<td>If you</td>
-						     						<td>Soul king</td>
-						     						<td>Free</td>
-						     						<td class="hinhanh"><img src="image/brook.jpg" width="30px" height="30px" alt=""></td>
-						     						<td>getslinkvip.com</td>
-						     						<td>1.000.000.000</td>
-						     					</tr>
-						     					<tr>
-						     						<td>1</td>
-						     						<td>If you</td>
-						     						<td>Soul king</td>
-						     						<td>Free</td>
-						     						<td class="hinhanh"><img src="image/brook.jpg" width="30px" height="30px" alt=""></td>
-						     						<td>getslinkvip.com</td>
-						     						<td>1.000.000.000</td>
-						     					</tr>
-						     					<tr>
-						     						<td>1</td>
-						     						<td>If you</td>
-						     						<td>Soul king</td>
-						     						<td>Free</td>
-						     						<td class="hinhanh"><img src="image/brook.jpg" width="30px" height="30px" alt=""></td>
-						     						<td>getslinkvip.com</td>
-						     						<td>1.000.000.000</td>
-						     					</tr>
-						     					<tr>
-						     						<td>1</td>
-						     						<td>If you</td>
-						     						<td>Soul king</td>
-						     						<td>Free</td>
-						     						<td class="hinhanh"><img src="image/brook.jpg" width="30px" height="30px" alt=""></td>
-						     						<td>getslinkvip.com</td>
-						     						<td>1.000.000.000</td>
-						     					</tr>
-						     					<tr>
-						     						<td>1</td>
-						     						<td>If you</td>
-						     						<td>Soul king</td>
-						     						<td>30/04/75</td>
-						     						<td class="hinhanh"><img src="image/brook.jpg" width="30px" height="30px" alt=""></td>
-						     						<td>getslinkvip.com</td>
-						     						<td>1.000.000.000</td>
-						     					</tr>
-						     					<tr>
-						     						<td>1</td>
-						     						<td>If you</td>
-						     						<td>Soul king</td>
-						     						<td>Free</td>
-						     						<td class="hinhanh"><img src="image/brook.jpg" width="30px" height="30px" alt=""></td>
-						     						<td>getslinkvip.com</td>
-						     						<td>1.000.000.000</td>
-						     					</tr>
-						     					<tr>
-						     						<td>1</td>
-						     						<td>If you</td>
-						     						<td>Soul king</td>
-						     						<td>Free</td>
-						     						<td class="hinhanh"><img src="image/brook.jpg" width="30px" height="30px" alt=""></td>
-						     						<td>getslinkvip.com</td>
-						     						<td>1.000.000.000</td>
-						     					</tr>
-						     					<tr>
-						     						<td>1</td>
-						     						<td>If you</td>
-						     						<td>Soul king</td>
-						     						<td>Free</td>
-						     						<td class="hinhanh"><img src="image/brook.jpg" width="30px" height="30px" alt=""></td>
-						     						<td>getslinkvip.com</td>
-						     						<td>1.000.000.000</td>
-						     					</tr>
-						     					<tr>
-						     						<td>1</td>
-						     						<td>If you</td>
-						     						<td>Soul king</td>
-						     						<td>Free</td>
-						     						<td class="hinhanh"><img src="image/brook.jpg" width="30px" height="30px" alt=""></td>
-						     						<td>getslinkvip.com</td>
-						     						<td>1.000.000.000</td>
-						     					</tr>
+						     					<?php foreach($listen as $key => $value ): ?>
+						     					
+						     						<tr>
+							     						<td><?=($trangHienTai-1)*5 + 1 + $key?></td>
+							     						<td><?= $value['song_name']?></td>
+							     						<td><?= $value['singer']?></td>
+							     						<td><?= $value['type']?></td>
+							     						<td class="hinhanh"><img src="<?= $value['URL_IMG']?>" width="30px" height="30px" alt=""></td>
+							     						<td><?= $value['URL']?></td>
+							     						<td><?= $value['hear_number']?></td>
+							     					</tr>
+						     					
+						     					<?php endforeach ?>
+						     					<?php unset($key); ?>
+												<?php unset($value); ?>
 						     				</tbody>
 						     			</table>
 						     		</div>
+						     		<!-- phần phân trang  -->
+									<?php if($sotrang > 1) { ?>
+										<div class="text-center page mx-auto">
+											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+												<ul class="pagination justify-content-center" style="margin: 30px 0">
+													<?php for($i = 0; $i < $sotrang; $i++) {?>
+														<?php if($i+1 == $trangHienTai) {?>
+															<li class="page-item active page-listen"><a class="page-link" ><?= $i+1?></a></li>
+														<?php } else {?>
+															<li class="page-item page-listen"><a class="page-link"><?= $i+1?></a></li>
+														<?php } ?>
+													<?php } ?>										
+												</ul>
+											</div>
+										</div>
+									<?php } ?>
+									<!-- end phần phân trang -->
 						     	</div> 
 						    </div>
 						    <div id="menu1" class="container tab-pane fade"><br>
@@ -255,6 +213,12 @@
 						      	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 						      		<h2>Danh sách bài hát</h2>
 						      	</div>
+						      	<div class="timkiem float-right">
+									<input class="form-control" id="search-key" type="text" placeholder="Nhập tên bài hát" aria-label="Search" name="key">
+									<button class="btn btn-info" type="submit" id="search">
+										<i class="fa fa-search" aria-hidden="true"></i>
+									</button>
+								</div>
 						      	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 danhsachbh">
 						      		<table class="table">
 						      			<thead>
@@ -265,103 +229,43 @@
 												<th>Thể loại</th>
 												<th>Hình ảnh</th>
 												<th>Audio</th>
-												<th>Lượt nghe</th>
+												<th>Lượt tải</th>
 					     					</tr>
 					     				</thead>
 					     				<tbody>
-					     					<tr>
-					     						<td>1</td>
-					     						<td>If you</td>
-					     						<td>Soul king</td>
-					     						<td>Free</td>
-					     						<td class="hinhanh">15/2/09</td>
-					     						<td>getslinkvip.com</td>
-					     						<td>1.000.000.000</td>
-					     					</tr>
-					     					<tr>
-					     						<td>1</td>
-					     						<td>If you</td>
-					     						<td>Soul king</td>
-					     						<td>Free</td>
-					     						<td class="hinhanh">15/2/09</td>
-					     						<td>getslinkvip.com</td>
-					     						<td>1.000.000.000</td>
-					     					</tr>
-					     					<tr>
-					     						<td>1</td>
-					     						<td>If you</td>
-					     						<td>Soul king</td>
-					     						<td>Free</td>
-					     						<td class="hinhanh">15/2/09</td>
-					     						<td>getslinkvip.com</td>
-					     						<td>1.000.000.000</td>
-					     					</tr>
-					     					<tr>
-					     						<td>1</td>
-					     						<td>If you</td>
-					     						<td>Soul king</td>
-					     						<td>Free</td>
-					     						<td class="hinhanh">15/2/09</td>
-					     						<td>getslinkvip.com</td>
-					     						<td>1.000.000.000</td>
-					     					</tr>
-					     					<tr>
-					     						<td>1</td>
-					     						<td>If you</td>
-					     						<td>Soul king</td>
-					     						<td>Free</td>
-					     						<td class="hinhanh">15/2/09</td>
-					     						<td>getslinkvip.com</td>
-					     						<td>1.000.000.000</td>
-					     					</tr>
-					     					<tr>
-					     						<td>1</td>
-					     						<td>If you</td>
-					     						<td>Soul king</td>
-					     						<td>Free</td>
-					     						<td class="hinhanh">15/2/09</td>
-					     						<td>getslinkvip.com</td>
-					     						<td>1.000.000.000</td>
-					     					</tr>
-					     					<tr>
-					     						<td>1</td>
-					     						<td>If you</td>
-					     						<td>Soul king</td>
-					     						<td>Free</td>
-					     						<td class="hinhanh">15/2/09</td>
-					     						<td>getslinkvip.com</td>
-					     						<td>1.000.000.000</td>
-					     					</tr>
-					     					<tr>
-					     						<td>1</td>
-					     						<td>If you</td>
-					     						<td>Soul king</td>
-					     						<td>Free</td>
-					     						<td class="hinhanh">15/2/09</td>
-					     						<td>getslinkvip.com</td>
-					     						<td>1.000.000.000</td>
-					     					</tr>
-					     					<tr>
-					     						<td>1</td>
-					     						<td>If you</td>
-					     						<td>Soul king</td>
-					     						<td>Free</td>
-					     						<td class="hinhanh">15/2/09</td>
-					     						<td>getslinkvip.com</td>
-					     						<td>1.000.000.000</td>
-					     					</tr>
-					     					<tr>
-					     						<td>1</td>
-					     						<td>If you</td>
-					     						<td>Soul king</td>
-					     						<td>Free</td>
-					     						<td class="hinhanh">15/2/09</td>
-					     						<td>getslinkvip.com</td>
-					     						<td>1.000.000.000</td>
-					     					</tr>
+					     					<?php foreach($download as $key => $value): ?>
+					     					
+					     						<tr>
+						     						<td><?= $key + 1 + ($trangHienTai-1)*5?></td>
+						     						<td><?= $value['song_name']?></td>
+						     						<td><?= $value['singer']?></td>
+						     						<td><?= $value['type']?></td>
+						     						<td class="hinhanh"><img src="<?= $value['URL_IMG']?>" width="30px" height="30px" alt=""></td>
+						     						<td><?= $value['URL']?></td>
+						     						<td><?= $value['download_number']?></td>
+						     					</tr>
+
+					     					<?php endforeach ?>
 					     				</tbody>
 						      		</table>
 						      	</div>
+						      	<!-- phần phân trang  -->
+								<?php if($sotrang > 1) { ?>
+									<div class="text-center page mx-auto">
+										<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+											<ul class="pagination justify-content-center" style="margin: 30px 0">
+												<?php for($i = 0; $i < $sotrang; $i++) {?>
+													<?php if($i+1 == $trangHienTai) {?>
+														<li class="page-item active page-download"><a class="page-link "><?= $i+1?></a></li>
+													<?php } else {?>
+														<li class="page-item page-download"><a class="page-link "><?= $i+1?></a></li>
+													<?php } ?>
+												<?php } ?>										
+											</ul>
+										</div>
+									</div>
+								<?php } ?>
+								<!-- end phần phân trang -->
 						      </div>
 						    </div>
 						  </div>	
@@ -373,6 +277,6 @@
 		<!-- end phần ảnh nền -->
 	</div>
 	<!-- end phần nội dung -->
-	<script type="text/javascript" src="1.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>/vendor/Js/Admin_Thongke.js"></script>
 </body>
 </html>
