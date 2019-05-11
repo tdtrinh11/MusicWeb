@@ -13,13 +13,13 @@
 			$this->load->database();
 		}
 
-		public function index()
+		public function quanLyUser()
 		{
-			$this->load->model('Account');
+			$this->load->model('User');
 
-			$dulieunguoidung = $this->Account->getAllUser();
+			$dulieunguoidung = $this->User->getAllUser();
 
-			$sotrang = $this->Account->soTrang(3);
+			$sotrang = $this->User->soTrang(3);
 
 			$dulieu = array(
 				'dulieunguoidung' => $dulieunguoidung,
@@ -32,18 +32,18 @@
 
 		public function page($trang)
 		{
-			$this->load->model('Account');
+			$this->load->model('User');
 
-			$dulieunguoidung = $this->Account->loadUserTheoTrang($trang,3);
+			$dulieunguoidung = $this->User->loadUserTheoTrang($trang,3);
 
-			$sotrang = $this->Account->soTrang(3);
+			$sotrang = $this->User->soTrang(3);
 
 			$dulieu = array(
 				'dulieunguoidung' => $dulieunguoidung,
 				'sotrang' => $sotrang
 			);
 
-			$this->load->view('Admin_QuanlyUser.php', $dulieu, FALSE);
+			echo json_encode($dulieu);
 		}
 
 		public function xoaUser($AID)

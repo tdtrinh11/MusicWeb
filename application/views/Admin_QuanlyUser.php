@@ -145,19 +145,13 @@
 			<div class="row text-center page">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<ul class="pagination justify-content-center" style="margin: 30px 0">
-						<li class="page-item">
-							<a href="<?= base_url();?>Admin_Web/page/<?= $trangHienTai - 1?>" class="page-link">Previous</a>
-						</li>
 						<?php for($i = 0; $i < $sotrang; $i++) {?>
 							<?php if($i+1 == $trangHienTai) {?>
 								<li class="page-item active"><a class="page-link" href="<?= base_url(); ?>Admin_Web/page/<?= $i+1 ?>"><?= $i+1?></a></li>
 							<?php } else {?>
 								<li class="page-item"><a class="page-link" href="<?= base_url(); ?>Admin_Web/page/<?= $i+1 ?>"><?= $i+1?></a></li>
 							<?php } ?>
-						<?php } ?>
-						<li class="page-item">
-							<a href="<?= base_url();?>Admin_Web/page/<?= $trangHienTai + 1?>" class="page-link">Next</a>
-						</li>										
+						<?php } ?>										
 					</ul>
 				</div>
 			</div>
