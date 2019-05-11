@@ -1,96 +1,189 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Playlist</title>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Playlist</title>
+	<script type="text/javascript" src="<?= base_url(); ?>vendor/Js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>vendor/FontAwesome/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>vendor/Bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="<?= base_url(); ?>vendor/Bootstrap/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>vendor/Css/playlist.css">
 </head>
 <body>
+	<!-- end quân -->
+	<!-- <div class="container-fluid">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="anhtieude">
+					<img src="../../New folder/image/pls.JPG" alt="Hình ảnh" style="width:100%;" class="anhtd">
+				</div>
+			</div>
+		</div>
+	</div> -->
 
-<nav class="navbar navbar-fixed-top mynav">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="background-color: #b366ff;">
-        <span class="icon-bar" style="background-color: black;"></span>
-        <span class="icon-bar" style="background-color: black;"></span>
-        <span class="icon-bar" style="background-color: black;"></span>
-      </button>
-      <a class="navbar-brand" href="#" style="font-size: 30px;">BK.MP3</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="#">TOPVIEW</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">PLAYLIST</a></li>
-      </ul>
-      <form class="navbar-form navbar-left" action="#">
- 		<div class="input-group" style="margin-left: 50px;">
- 			<div class="input-group-btn">
-     	 		<button class="btn btn-default" type="submit">
-        		<i class="glyphicon glyphicon-search"></i>
-      			</button>
-    		</div>
-    		<input type="text" class="form-control" placeholder="Nhập tên bài hát, ca sĩ..." name="search"autocomplete="off" style="width: 200%;">
-  		</div>
-	  </form>
-    </div>
-  </div>
-</nav><br><br><br>
-<img src="image/pls.jpg" alt="Hình ảnh" style="width:100%;">
-<br><br>
-  <span class="myText">Playlist cá nhân</span>
-    <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" onclick="document.getElementById('id03').style.display='block'"><button type="button" class="mybutton" style="margin-right: 100px;"><span class="glyphicon glyphicon-plus"></span> Tạo Playlist mới</button></a></li>
-    </ul>
-        <br><br>
-<div class="container" style="width: 90%;">
-  <div class="row">
-    <div class="col-sm-3">
-      <div class="thumbnail">
-        <a href="#" class="myCaption">
-          <img src="image/pls0.jpg" style="width:100%">
-          <div class="caption">
-            <br>
-            <p class="captionText">Đó là một câu chuyện buồn</p>
-          </div>
-        </a>
-      </div>
-    </div>
-</div>
-</div>
-<div id="id03" class="modal">
-  <form class="modal-content animate" action="Playlist.html" style="width: 40%;">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id03').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
+	<div class="container">
+		<div class="row row1">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<p class="td">PLAYLIST CÁ NHÂN</p>
+				<div class="thempl" data-toggle="modal" data-target="#modalThem">
+					<div class="btn btn-danger"><i class="fa fa-plus" aria-hidden="true"></i> Thêm playlist</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <div class="container1">
-      <input class="img" type="file" required>
-	  <label for="name"><b>Tên Playlist: </b></label>
-      <input class="edit1" type="text" placeholder="Tên của Playlist mới" name="name" required>
+	<div class="container">
+		<div class="row">
+			<div class="col-6 col-xs-6 col-sm-6 col-md-4 col-lg-3 _1playlist">
+				<img src="<?= base_url(); ?>vendor/Image_playlist/img-plist-full.jpg" alt="" width="100%">
+				<div class="icon-play">
+					<i class="fa fa-play-circle-o" aria-hidden="true"></i>
+				</div>
+				<div class="td_pl">AAAA</div>
+				<div class="chinhsua" data-target="#mycsPlaylist" data-toggle="modal">
+					<i class="fa fa-pencil" aria-hidden="true"></i>
+				</div>
+				<div class="xoa">
+					<i class="fa fa-times" aria-hidden="true"></i>
+				</div>
+			</div>
+			
+			
 
-      <label for="uname"><b>Mô tả Playlist </b></label>
-      <input class="edit1" type="text" placeholder="Giới thiệu về playlist này" name="uname" required>
+		</div>
+	</div>
 
-      <button class="mybutton" type="submit" style="width: 15%; background-color: purple;">Lưu</button>
-    </div>
-  </form>
-</div>
-<script>
-// Get the modal
-var modal = document.getElementById('id03');
+	<div class="modal modal_them fade" id="mycsPlaylist">
+		<div class="modal-dialog">
+			<div class="modal-content content_cspl">
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title bhmoi">Chỉnh sửa playlist</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body body_cspl">
+					<div class="themplaylistt">
+						<!-- CHÀO MỪNG BẠN ĐẾN VỚI TRANG QUẢN TRỊ !!! -->
+						<div class="container">
+							<form action="" method="POST" role="form" id="formCs">
+								<div class="row form_tenpl_edit">
+									<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+										<label for="">Playlist</label>
+									</div>
+									<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+										<input type="text" class="form-control edit_name" required name="ten_pl" placeholder="Playlist">
+									</div>
+								</div>
+								<div class="row form_ha">
+									<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+										<label for="">Hình ảnh</label>
+									</div>
+									<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+										<img class="img_bd" src="<?= base_url(); ?>vendor/Image_playlist/img-plist-full.jpg"></img>
+										<input type="file" class="form-control edit_image" required name="avt" placeholder="">
+									</div>
+								</div>
+								<div class="row form_mt">
+									<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+										<label for="">Mô tả</label>
+									</div>
+									<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"> 
+										<textarea  rows="5" cols="" class="form-control edit_mt" required name="mota" placeholder="Mô tả playlist"></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+									</div>
+									<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+										<div class="btn btn-success editPl">Edit</div>
+									</div>
+
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- modal thêm nhạc -->
+	<div class="modal modal_them fade" id="modalThem">
+		<div class="modal-dialog">
+			<div class="modal-content content_thempl">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title bhmoi">Bài hát mới</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body body_thempl">
+					<div class="themplaylistt">
+						<!-- CHÀO MỪNG BẠN ĐẾN VỚI TRANG QUẢN TRỊ !!! -->
+						<div class="container">
+							<form action="" method="POST" role="form" id="formThem">
+								<div class="row form_tenpl">
+									<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+										<label for="">Playlist</label>
+									</div>
+									<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+										<input type="text" class="form-control add_tpl" required name="ten_pl" placeholder="Playlist">
+									</div>
+								</div>
+								<div class="row form_ha">
+									<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+										<label for="">Hình ảnh</label>
+									</div>
+									<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+										<input type="file" class="form-control add_image" required name="avt" placeholder="">
+									</div>
+								</div>
+								<div class="row form_mt">
+									<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+										<label for="">Mô tả</label>
+									</div>
+									<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"> 
+										<textarea  rows="5" cols="" class="form-control add_mt" required name="mota" placeholder="Mô tả playlist"></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+									</div>
+									<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+										<div class="btn btn-success addPl">Add</div>
+									</div>
+
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
 </body>
 </html>
