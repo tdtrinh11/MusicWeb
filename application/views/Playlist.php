@@ -120,6 +120,83 @@
 			</div>
 		</div>
 	</div>
+	
+	<div class="miniplayer">
+		<div class="miniplayer-container">
+			<div class="miniplayer-inner">
+				<div class="control-container audioPlayer">
+					<div class="miniplayer-control">
+						<a class="btn-previous" title="previous">
+							<i class="fa fa-step-backward" aria-hidden="true"></i>
+						</a>
+						<a class="btn-play play" id="player">
+							<i class="fa fa-play-circle" aria-hidden="true"></i>
+							<i class="fa fa-pause-circle-o" aria-hidden="true"></i>
+						</a>
+						<a class="btn-next" title="next">
+							<i class="fa fa-step-forward" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="info-detail">
+						<div class="song-info">
+							<span class="song-name">
+								<a href="">Dừng lại đi, tôi mệt rồi</a>
+							</span>
+							<span class="artist">
+								<a>-EMI</a>
+							</span>
+							<div class="player-timer">
+								<span class="timer-left">00:00</span>
+								<div class="slider">
+									<div class="loaded">
+										<div class="pace"></div>
+										<a href="#" class="slider-handle" style="left: 0%;"></a>
+									</div>
+								</div>
+								<span class="timer-right">00:00</span>
+							</div>
+						</div>
+					</div>
+					<div class="features-wrapper">
+						<ul class="miniplayer-action">
+							<li class="volume-container">
+								<a class="btn-volume up">
+									<i class="fa fa-volume-up" aria-hidden="true"></i>
+									<i class="fa fa-volume-off" aria-hidden="true"></i>
+								</a>
+								<div class="outer">
+									<div class="inner">
+										<div class="inner-bar">
+											<div class="inner-bar-fill">
+												<div class="inner-handle"></div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+							</li>
+							<li class="download">
+								<a class="btn-downnload">
+									<i class="fa fa-download" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="playlist">
+								<a class="btn-playlist">
+									<i class="fa fa-list" aria-hidden="true"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<audio class="audio">
+						<source src="1.mp3">
+					</audio>
+                    <audio class="audio">
+                        <source src="2.mp3">
+                    </audio>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<!-- modal thêm nhạc -->
