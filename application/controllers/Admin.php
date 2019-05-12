@@ -118,6 +118,44 @@
 			echo json_encode($dulieu);
 			// $this->load->view('Admin_Thongke',$dulieu,false);
 		}
+
+		public function timKiem()
+		{
+			$key = $this->input->get('key');
+
+			$this->load->model('Statistical');
+			$song = $this->Statistical->searchSong($key);
+			$list_song = $this->Statistical->getAllListener();
+
+			for($i = 0 ; $i < sizeof($song); $i++) {
+				for($j = 0; $j < sizeof($list_song); $j++) {
+					if(strcmp($song[$i]['song_name'], $list_song[$j]['song_name']) == 0) {
+						$song[$i]['SID'] = $j + 1;
+					}
+				}
+			}
+
+			echo json_encode($song);
+		}
+
+		public function timKiemDownload()
+		{
+			$key = $this->input->get('key');
+
+			$this->load->model('Statistical');
+			$song = $this->Statistical->searchSong1($key);
+			$list_song = $this->Statistical->getAllDownloader();
+
+			for($i = 0 ; $i < sizeof($song); $i++) {
+				for($j = 0; $j < sizeof($list_song); $j++) {
+					if(strcmp($song[$i]['song_name'], $list_song[$j]['song_name']) == 0) {
+						$song[$i]['SID'] = $j + 1;
+					}
+				}
+			}
+
+			echo json_encode($song);
+		}
 		// end phần thống kê
 	}
 ?>
