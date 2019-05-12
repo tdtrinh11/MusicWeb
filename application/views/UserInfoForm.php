@@ -1,179 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Quan Ly Thong Tin</title>
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="quanlythongtin.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <style type="text/css">
-    	img {width: 120px;height: 160px;}
-    	th, td {padding: 13px;}
-    	th {text-align: center;}
-    	body {
-    		line-height: 1.5;
-		    font-weight: 400;
-		    background-color: #f3f3f3;
-		    min-width: 1024px;
-    	}
-    	.z-box-title{
-	        font-size: 24px;
-	        font-weight: 700;
-	        margin-bottom: 20px;
-	        text-transform: capitalize;
-	    }
-	    .container{
-	        width: 80%;
-	        margin-right: auto;
-	        margin-left: auto;
-	        padding: 10px;
-	       /* padding-left: 15px;
-	        padding-right: 15px;*/
-	        position: relative;
-	        background-color: #fcfcfc;
-	    }
-	    div.z-box-title{
-        	padding: 10px;
-     	}
-    </style>
+	<meta charset="UTF-8">
+	<title>Quản lý thông tin</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="<?= base_url(); ?>vendor/Js/jquery-3.3.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>vendor/FontAwesome/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>vendor/Bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="<?= base_url(); ?>vendor/Bootstrap/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+	
+	<script type="text/javascript" src="<?= base_url(); ?>vendor/Js_Ng/angular-1.5.min.js"></script>  
+	<script type="text/javascript" src="<?= base_url(); ?>vendor/Js_Ng/angular-animate.min.js"></script>
+	<script type="text/javascript" src="<?= base_url(); ?>vendor/Js_Ng/angular-aria.min.js"></script>
+	<script type="text/javascript" src="<?= base_url(); ?>vendor/Js_Ng/angular-messages.min.js"></script>
+	<script type="text/javascript" src="<?= base_url(); ?>vendor/Js_Ng/angular-material.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?= base_url(); ?>vendor/Css/user_info_form.css">
+	<script type="text/javascript" src="<?= base_url(); ?>vendor/Js/user_info_form.js"></script>
 </head>
-<body>
-
-<nav class="navbar navbar-fixed-top mynav">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="background-color: #b366ff;">
-        <span class="icon-bar" style="background-color: black;"></span>
-        <span class="icon-bar" style="background-color: black;"></span>
-        <span class="icon-bar" style="background-color: black;"></span>
-      </button>
-      <a class="navbar-brand" href="#" style="font-size: 30px;">BK.MP3</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="#">TOPVIEW</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">PLAYLIST</a></li>
-      </ul>
-      <form class="navbar-form navbar-left" action="#">
-    <div class="input-group" style="margin-left: 50px;">
-      <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search"></i>
-            </button>
-        </div>
-        <input type="text" class="form-control" placeholder="Nhập tên bài hát, ca sĩ..." name="search"autocomplete="off" style="width: 200%;">
-      </div>
-    </form>
-      <div class="nav navbar-nav navbar-right dropdown" style="margin-top: 8px;">
-        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> Vương Ngọc Quân
-        <span class="caret"></span></button>
-        <ul class="dropdown-menu">
-          <li><a href="#">Sửa thông tin</a></li>
-          <li><a href="GuestForm.html">Đăng xuất</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav><br/><br><br>
-
-  <!-- code -->
-<div class="container ">
-  	<div class="bg-gradient-grey pad-top-30 pad-bottom-0">
-	    <div class="row">
-	      <div class="col-md-12 z-box-title">
-	        <span class="z-box-title">Thông tin cá nhân</span>
-	      </div>
-	    </div>
+<body ng-app="myApp" >
+	<div class="container">
+		<div class="span3 well">
+			<center>
+				<a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R" name="aboutme" width="140" height="140" class="img-circle"></a>
+				<h3>Joe Sixpack</h3>
+				<em>click my face for more</em>
+			</center>
+		</div>
 	</div>
-    <div class="userDetail">
-    	<center>
-    	<table>
-	    	<tr>
-	    		<th colspan="2">
-					<div class="">
-						<img title="Vương Ngọc Quân's Photo" class="" src="http://2.bp.blogspot.com/-JAdNFMLXAkc/UvugyhRr3eI/AAAAAAAABBc/SXK2liM1r-I/s1600/anh-gai-dep1a2.jpg" crossorigin="Anonymous">
+	<div class="col-xs- col-sm- col-md- col-lg-">
+		
+	</div>
+	<div class="container" ng-controller="MyController">
+		<div class="row">
+			<div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+				<div class="card" ng-show="hienthi">
+					<div class="card-block">
+						<div class="card-header">
+							Thông tin cá nhân
+							<b class="float-right"><i class="fa fa-pencil csprofile" ng-click="chedosua()"></i></b>
+						</div>
+						<div class="card-body">
+							<div class="card-text">
+								<b>Tên đăng nhập</b> : dungnh
+							</div>
+							<div class="card-text">
+								<b>Họ và tên</b> : Nguyễn Huy Dũng
+							</div>
+							<div class="card-text">
+								<b>Giới tính</b> : Nữ
+							</div>
+						</div>
 					</div>
-				</th>
-			</tr>
-			<tr>
-				<td>ID</td>
-				<td>123quanngoc</td>
-			</tr>			 
-			<tr>
-				<td>Username</td>
-				<td>quanngoc</td>
-			</tr>
-			<tr>
-				<td>Fullname</td>
-				<td>Vương Ngọc Quân</td>
-			</tr>
-			<tr>
-				<td>Sex</td>
-				<td>...</td>
-			</tr>
-			<tr>
-				<td colspan="2" style="text-align: center;">
-					<a href="#" onclick="document.getElementById('changeInfo').style.display='block'"><span class="glyphicon glyphicon-pencil"></span> Chỉnh sửa thông tin</a>
-				</td>
-			</tr>
-    	</table>
-    	</center>
-    </div>
-  </div>
-<br>
-<footer class="container-fluid text-center" style="background-color: #ffccff;color: #9900e6;">
-  <p>
-    <br>Một sản phẩm của OCS TEAM <br>
-    Địa chỉ: Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội <br>
-    Điện thoại: 0355111616 <br>
-    Email: ocsteambk@gmail.com <br><br>
-    <a href="https://www.facebook.com/"><i class='fab fa-facebook' style='font-size:24px'></i> </a>
-    <a href="https://twitter.com/"><i class='fab fa-twitter-square' style='font-size:24px'></i> </a>
-    <a href="https://www.instagram.com/"><i class='fab fa-instagram' style='font-size:24px'></i> </a>
-  </p>
-</footer>
+				</div>
+				<div class="card" ng-show="!hienthi">
+					<div class="card-block">
+						<div class="card-header">
+							Chỉnh sửa thông tin
 
-<!-- phan chinh sua -->
-<div id="changeInfo" class="modal">
-	<form class="modal-content animate" action="QuanLyThongTin.html" style="width: 40%;">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('changeInfo').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
+						</div>
+						<div class="card-body">
+							<div class="card-text">
+								<b>Tên đăng nhập</b>
+								<input type="text" class="form-control" disabled name="" value="dungnh">
+							</div>
+							<div class="card-text">
+								<b>Họ và tên</b>
+								<input type="text" class="form-control" name="" value="Nguyễn Huy Dũng">
+							</div>
+							<div class="card-text test">
+								<b>Ảnh đại diện</b><br>
+								<input type="file" name="file" class="anh_sk"  select-ng-files ng-model="one_new.image" multiple>
+								<div class="thongtin">
+									<img ng-src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbezqZpEuwGSvitKy3wrwnth5kysKdRqBW54cAszm_wiutku3R">
+									<div class="phiaduoi">
+										<i class="fa fa-camera" aria-hidden="true"></i> Cập nhật ảnh
+									</div>
+								</div>
+							</div>
+							<div class="card-text">
+								<b>Giới tính</b></br>
+								<input type="radio" name="gender" value="male" checked > Male&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+								<input type="radio" name="gender" value="female"> Female <br>
+							</div>
+							<div class="card-text">
+								<b>Mật khẩu cũ</b>
+								<div class="input-group">
+									<input type="{{inputType1}}" name="password" class="form-control input-lg" ng-model="password_field1" placeholder="Enter Password" />
+									<span class="input-group-addon">
+										<span class="{{showHideClass1}}" ng-click="showPassword1()" style="cursor:pointer"></span>
+									</span>
+								</div>
+							</div>
+							<div class="card-text">
+								<b>Mật khẩu mới</b>
+								<div class="input-group">
+									<input type="{{inputType2}}" name="password" class="form-control input-lg" ng-model="password_field2" placeholder="Enter Password" />
+									<span class="input-group-addon">
+										<span class="{{showHideClass2}}" ng-click="showPassword2()" style="cursor:pointer"></span>
+									</span>
+								</div>
+							</div>
+							<div class="card-text">
+								<b>Nhập lại mật khẩu mới</b>
+								<div class="input-group">
+									<input type="{{inputType3}}" name="password" class="form-control input-lg" ng-model="password_field3" placeholder="Enter Password" />
+									<span class="input-group-addon">
+										<span class="{{showHideClass3}}" ng-click="showPassword3()" style="cursor:pointer"></span>
+									</span>
+								</div>
+							</div>
 
-    <div class="container1">
-	  <label for="name"><b>Họ và tên: </b></label>
-      <input class="edit1" type="text" placeholder="" name="name">
-
-	  <label for="gender"><b>Giới tính: </b></label><br>
-      <input type="radio" name="gender" value="male" checked > Male&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  	  <input type="radio" name="gender" value="female"> Female <br>
-
-      <label for="psw"><b>Mật khẩu: </b></label>
-      <input class="edit1" type="password" placeholder="Nhập mật khẩu mới..." name="psw">
-
-      <label for="psw1"><b>Nhập lại mật khẩu: </b></label>
-      <input class="edit1" type="password" placeholder="Nhập lại mật khẩu..." name="psw1">
-
-      <button class="edit1" type="submit" style="width: 100%; background-color: #ff66ff;">Thay đổi</button>
-    </div>
-  </form>
-</div>
-<script>
-	// Get the modal
-	var modal = document.getElementById('changeInfo');
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) {
-	    if (event.target == modal) {
-	        modal.style.display = "none";
-	    }
-	}
-</script>
+						</div>
+						<div class="btn btn-outline-success btn-block" ng-click="thaydoi()">Thay đổi</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
 
 </body>
 </html>
