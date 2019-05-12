@@ -12,259 +12,323 @@
     <link rel="stylesheet" type="text/css" href="../../vendor/css/music.css">
 </head>
 <body>
-<nav class="navbar navbar-fixed-top mynav">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" style="background-color: #b366ff;">
-        <span class="icon-bar" style="background-color: black;"></span>
-        <span class="icon-bar" style="background-color: black;"></span>
-        <span class="icon-bar" style="background-color: black;"></span>
-      </button>
-      <a class="navbar-brand" href="#" style="font-size: 30px;">BK.MP3</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="#">TOPVIEW</a></li>
-        <li><a href="#">NEWS</a></li>
-        <li><a href="#">PLAYLIST</a></li>
-      </ul>
-      <form class="navbar-form navbar-left" action="#">
- 		<div class="input-group" style="margin-left: 50px;">
- 			<div class="input-group-btn">
-     	 		<button class="btn btn-default" type="submit">
-        		<i class="glyphicon glyphicon-search"></i>
-      			</button>
-    		</div>
-    		<input type="text" class="form-control" placeholder="Nhập tên bài hát, ca sĩ..." name="search"autocomplete="off" style="width: 200%;">
-  		</div>
-	  </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" onclick="document.getElementById('id02').style.display='block'"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
-        <li><a href="#" onclick="document.getElementById('id01').style.display='block'"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
-      </ul>
-    </div>
-  </div>
-</nav><br/><br><br>
-
-<!-- code -->
-<div class="container">
-
-  <div id="mainplayer">
-    <div class="tenbaihat">
-      <span style="font-size: 25px;color:#164954">Đếm Ngày Xa Em</span>&nbsp;<span style="width: 720px">- Only C  </span>
-    </div>
-
-    <div class="music col-sm-8">    
-      <div id="khungplayer">
-        <div class="container-audio pad-bottom-10">                
-            <div class="colum1">
-                <div class="row"></div>
+<nav class="navbar navbar-expand-lg myNav">
+        <div class="container">
+            <a href="index.html" class="navbar-brand home">
+                <img src="logo_music_web.png" class="logo" alt="" width='100px'>
+            </a>
+            <div class="navbar-buttons">
+                <button type="button" data-toggle="collapse" data-target="#navigation" class="btn btn-outline-secondary navbar-toggler">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-align-justify"></i>
+                </button>
+                <button type="button" data-toggle="collapse" data-target="#search" class="btn btn-outline-secondary navbar-toggler">
+                    <span class="sr-only">Toggle search</span>
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </button>
+                <a href="basket.html" class="btn btn-outline-secondary navbar-toggler">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                </a>
             </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
-            </div>
-            <div class="colum1">
-                <div class="row"></div>
+            <div id="navigation" class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Playlist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Contact</a>
+                    </li>
+                    
+                    <form class="form-inline" action="/action_page.php">
+                        <div class="input-group">
+                            <input type="text" class="form-control input_tk" placeholder="search ...">
+                            <div class="input-group-btn">
+                                <button class="btn btn-success search_i" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div> 
+                    </form>
+                </ul>
+                <div class="navbar-buttons d-flex justify-content-end">
+                    <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block">
+                        <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-user" aria-hidden="true"></i>  Cá nhân</a>
+                    </div>
+                    <div id="basket-overview" class="navbar-collapse collapse d-none d-lg-block">
+                        <a href="basket.html" class="btn btn-primary navbar-btn"><i class="fa fa-sign-out" aria-hidden="true"></i>  Đăng xuất</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="container-audio">
-          <audio controls="" controlslist="nodownload">
-            <p>Your browser does not support the audio element</p><source src="DemNgayXaEm.mp3">
-          </audio>
+    </nav>
+
+    <div class="info-banner-box">
+        <div class="container">
+            <div class="blur-container" style="background: url(avt.jpg) center center / cover no-repeat rgb(112, 89, 75); width: 84%; height: 220px;"></div>
+            <div class="row">
+                <div <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 sub-container">
+                    <a class="medium-card-11">
+                        <img src="avt.jpg" alt="" style="width: 160px; height: 160px;">
+                    </a>
+                    <div class="info-banner-body clearfix">
+                        <div class="left-info">
+                            <h3 id="name-song-main">Một bước yêu vạn dạm đau</h3>
+                            <div class="artist-name" id="artist-name-main">
+                                <a role="button">Emily</a>
+                            </div>
+                            <div class="subtext authors">
+                                Sáng tác: <a role="button">Emily</a>
+                            </div>
+                             <div class="subtext category">
+                                Thể loại: <a role="button">Emily</a>
+                            </div>
+                        </div>
+                        <div class="right-info">
+                            <div class="log-stats">
+                                <div class="viewed">
+                                    <i class="fa fa-play" aria-hidden="true"></i>9,999
+                                </div>
+                                <div class="download">
+                                    <i class="fa fa-download" aria-hidden="true"></i>5,000
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="khungloibh">
-          <div class="loibh">
-          <span>Lời bài hát</span></div>
-          <div class="noidung">
-            <p>Ngọt lắm những lúc em nắm đôi tay 
-              Và hứa sẽ mãi yêu chỉ anh đây 
-              Từ khi em qua nơi này 
-              Anh thấy vui biết mấy 
-              Rồi nắng sớm mới ấm vẫn chưa vơi 
-              Con tim vang tiếng ca vui cười 
-              Vì em mang niềm vui tới nơi anh 
-              Như người may mắn nhất trên đời 
-
-              Nào đâu..... 
-              Chẳng đc bấy lâu 
-              Lại phải xa cách nhau 
-              Cố nén nỗi đau khi cơn mưa ngâu vụn vỡ 
-              Đêm về lại mơ 
-              Sớm ra lại bơ vơ còn xa em là nhớ 
-
-
-              Chỉ là đôi môi 
-              Chỉ là.. 
-              Vài câu yêu thương thôi mà 
-              Em đã khiến anh yêu em mãi không thể phai phôi 
-              Anh mong em đừng thay đổi 
-              Vì anh đã quá yêu em mất rồi 
-              Vì yêu em ,xa em quanh anh chỉ còn bóng tối 
-              Chờ đợi ngày mai 
-              Chờ... 
-              Một ngày gần trong tương lai 
-              Chờ... 
-              Ngày 2 ta đc sánh đôi vai được bên nhau mãi mãi 
-              dẫu .. 
-              Anh có làm gì sai 
-              Cũng sẽ không một ai có thể chia 2 ta chung bước mãi 
-              trên một con đường dài..... 
-
-              Đếm,đếm,đếm,đếm,đếm,....... 
-              Anh đếm ngày xa em 
-              ...... 
-              Rap : 
-
-              1,2,3,4,5,6,7 ...ngày trôi, 
-              Biết em giờ có nhớ về anh hay nhớ về ai 
-              Bao ngày thật là dài khi anh không có em ở bên cạnh 
-              Anh cảm thấy rất giá lạnh 
-              Mà làm sao cho em hiểu thấu khi mình không ở bên nhau 
-              ... 
-              Monday ..tuesday...wednesday...thursday...friday ...saturday...sun day.. 
-              Oh week 
-              Anh... chẳng thể nghĩ về ai chỉ nghĩ về em 
-              Nỗi buồn thì anh không thể đếm 
-              Nỗi nhớ em thì lại càng tăng thêm 
-              Ngọt ngào đôi môi không thể nếm 
-              Phải làm sao khi không em mỗi đêm...</p>        
-          </div>
-          
-      </div>
     </div>
 
-    <div class="suggest col-sm-4">
-      <span>Liên quan</span>
-    </div>
-  </div>
-</div>
+    <!-- phần chức năng -->
 
-<br>	
-<footer class="container-fluid text-center" style="background-color: #ffccff;color: #9900e6;">
-  <p>
-    <br>Một sản phẩm của OCS TEAM <br>
-    Địa chỉ: Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội <br>
-    Điện thoại: 0355111616 <br>
-    Email: ocsteambk@gmail.com <br><br>
-    <a href="https://www.facebook.com/"><i class='fab fa-facebook' style='font-size:24px'></i> </a>
-    <a href="https://twitter.com/"><i class='fab fa-twitter-square' style='font-size:24px'></i> </a>
-    <a href="https://www.instagram.com/"><i class='fab fa-instagram' style='font-size:24px'></i> </a>
-  </p>
-</footer>
+    <section class="user-interaction-box">
+        <div class="container">
+            <div class="sub-container">
+                <div class="play-song">
+                    <a class="btn btn-default play1" id="play-pause">
+                        <i class="fa fa-play" id="play1-song" aria-hidden="true"></i>
+                        <i class="fa fa-pause" id="pause-song" aria-hidden="true"></i>Nghe bài hát
+                    </a>
+                </div>
+                <div class="user-interaction-wrapper">
+                    <a href="#comment" class="comment">
+                        <i class="fa fa-comments-o" aria-hidden="true"></i>Bình luận
+                    </a>
+                    <a href="" class="addList">
+                        <i class="fa fa-plus" aria-hidden="true"></i>Thêm
+                    </a>
+                    <a href="" class="down">
+                        <i class="fa fa-download" aria-hidden="true"></i>Tải xuống
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> 
 
-<div id="id01" class="modal">
-  <form class="modal-content animate" action="UserForm.html" style="width: 40%;">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
+    <!-- phần lời bài hát và bình luận -->
 
-    <div class="container1">
-      <label for="uname"><b>Tài khoản: </b></label>
-      <input class="edit1" type="text" placeholder="Nhập tài khoản..." name="uname" required>
+    <section class="info-player">
+        <div class="container info">
+            <div class="sub-conatiner-info">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-8 col-lg-8">
+                        <!-- phần lời bài hát -->
+                        <div class="lyrics-wrapper">
+                            <h3>Lời bài hát</h3>
+                            <div class="lyrics-text">
+                                <div>
+                                    <span>
+                                        <span width=0>
+                                            <span>
+                                                <p class="lyrics-text">
+                                                    Đã bao giờ anh nghe, có vài điều khi yêu
+                                                    <br>Một là không nói dối, hai là ko nói dối nhiều lần
+                                                    <span id="dots">...</span><span id="more">
+                                                    <br>Cớ sao toàn thấy nước mắt
+                                                    <br>Cớ sao toàn những vết cắt
+                                                    <br>Có lẽ nào đến lúc, khi hai ta đã hết yêu
+                                                    <br>Cứ đi rồi sẽ đến, cứ im lặng sẽ qua
+                                                    <br>Một người như thế đấy
+                                                    <br>Yêu là yêu đến hết đời này
+                                                    <br>Em không là thế giới ấy
+                                                    <br>Em thật là nhỏ bé thôi
+                                                    <br>Tại sao em cứ ấp úng mãi không bao giờ nói ra
+                                                	</span>
+                                                </p>
+                                            </span>
+                                            <span class="more">
+                                                <a class="full-view" id="myBtn">Xem thêm</a>
+                                            </span>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end phần lời bài hát -->
 
-      <label for="psw"><b>Mật khẩu: </b></label>
-      <input class="edit1" type="password" placeholder="Nhập mật khẩu..." name="psw" required>
+                        <!-- phần bình luận -->
+                        <div id="comment">
+                            <h3>333 Bình luận</h3>
+                            <div class="z-show">
+                                <form class="frm-reply">
+                                    <div class="comment-input-wrapper">
+                                        <div class="comment-avatar">
+                                            <img src="avt.jpg" alt="" class="rounded-circle" style="width: 50px; height: 50px;">
+                                        </div>
+                                        <div class="text-input-wrapper">
+                                            <input id="main-text-comment" type="text" placeholder="Nhập bình luận của bạn...">
+                                        </div>
+                                    </div>
+                                    <div class="btn-actions-wrapper">
+                                        <a class="btn btn-danger delete">hủy</a>
+                                        <button class="btn btn-default" id="button-commit">Bình luận</button>
+                                    </div>
+                                </form>
+                            </div>
 
-      <button class="edit1" type="submit" style="width: 100%; background-color: #ff66ff;">Đăng nhập</button>
-    </div>
-  </form>
-</div>
-<div id="id02" class="modal">
-  <form class="modal-content animate" action="UserForm.html" style="width: 40%;">
-    <div class="imgcontainer">
-      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-    </div>
+                            <div class="comment-list-wrapper">
+                            	<ul class="list-comment">
+                            		<li class="comment-item">
+                            			<p class="medium-circle-card comment-avatar">
+                            				<img src="avt.jpg" alt="" class="rounded-circle" style="width: 50px; height: 50px;">
+                            			</p>
+                            			<div class="post-comment">
+                            				<p class="username">
+                            					Eminem
+                            					<span class="reply-ago-time">2 giờ trước</span>
+                            				</p>
+                            				<p class="content">Hm, you sing very nice</p>
+                            			</div>
+                            		</li>
+                            		<li class="comment-item">
+                            			<p class="medium-circle-card comment-avatar">
+                            				<img src="avt.jpg" alt="" class="rounded-circle" style="width: 50px; height: 50px;">
+                            			</p>
+                            			<div class="post-comment">
+                            				<p class="username">
+                            					Eminem
+                            					<span class="reply-ago-time">2 giờ trước</span>
+                            				</p>
+                            				<p class="content">Hm, you sing very nice</p>
+                            			</div>
+                            		</li>
+                            		<li class="comment-item">
+                            			<p class="medium-circle-card comment-avatar">
+                            				<img src="avt.jpg" alt="" class="rounded-circle" style="width: 50px; height: 50px;">
+                            			</p>
+                            			<div class="post-comment">
+                            				<p class="username">
+                            					Eminem
+                            					<span class="reply-ago-time">2 giờ trước</span>
+                            				</p>
+                            				<p class="content">Hm, you sing very nice</p>
+                            			</div>
+                            		</li>
+                            		<li class="comment-item">
+                            			<p class="medium-circle-card comment-avatar">
+                            				<img src="avt.jpg" alt="" class="rounded-circle" style="width: 50px; height: 50px;">
+                            			</p>
+                            			<div class="post-comment">
+                            				<p class="username">
+                            					Eminem
+                            					<span class="reply-ago-time">2 giờ trước</span>
+                            				</p>
+                            				<p class="content">Hm, you sing very nice</p>
+                            			</div>
+                            		</li>
+                            	</ul>
+                            </div>
+                        </div>
+                        <!-- end phần bình luận -->
+                    </div>
 
-    <div class="container1">
-	  <label for="name"><b>Họ và tên: </b></label>
-      <input class="edit1" type="text" placeholder="Nhập họ tên..." name="name" required>
+                    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> 
 
-	  <label for="gender"><b>Giới tính: </b></label><br>
-      <input type="radio" name="gender" value="male" checked > Male&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-  	  <input type="radio" name="gender" value="female"> Female <br>
 
-      <label for="uname"><b>Tài khoản: </b></label>
-      <input class="edit1" type="text" placeholder="Nhập tài khoản..." name="uname" required>
-
-      <label for="psw"><b>Mật khẩu: </b></label>
-      <input class="edit1" type="password" placeholder="Nhập mật khẩu..." name="psw" required>
-
-      <label for="psw1"><b>Nhập lại mật khẩu: </b></label>
-      <input class="edit1" type="password" placeholder="Nhập mật khẩu..." name="psw1" required>
-
-      <button class="edit1" type="submit" style="width: 100%; background-color: #ff66ff;">Đăng ký</button>
-    </div>
-  </form>
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-<script>
-// Get the modal
-var modal = document.getElementById('id02');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
+    <div class="miniplayer">
+		<div class="miniplayer-container">
+			<div class="miniplayer-inner">
+				<div class="control-container audioPlayer">
+					<div class="miniplayer-control">
+						<a class="btn-previous" title="previous">
+							<i class="fa fa-step-backward" aria-hidden="true"></i>
+						</a>
+						<a class="btn-play play" id="player">
+							<i class="fa fa-play-circle" aria-hidden="true"></i>
+							<i class="fa fa-pause-circle-o" aria-hidden="true"></i>
+						</a>
+						<a class="btn-next" title="next">
+							<i class="fa fa-step-forward" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="info-detail">
+						<div class="song-info">
+							<span class="song-name">
+								<a href="">Dừng lại đi, tôi mệt rồi</a>
+							</span>
+							<span class="artist">
+								<a>-EMI</a>
+							</span>
+							<div class="player-timer">
+								<span class="timer-left">00:00</span>
+								<div class="slider">
+									<div class="loaded">
+										<div class="pace"></div>
+										<a href="#" class="slider-handle" style="left: 0%;"></a>
+									</div>
+								</div>
+								<span class="timer-right">00:00</span>
+							</div>
+						</div>
+					</div>
+					<div class="features-wrapper">
+						<ul class="miniplayer-action">
+							<li class="volume-container">
+								<a class="btn-volume up">
+									<i class="fa fa-volume-up" aria-hidden="true"></i>
+									<i class="fa fa-volume-off" aria-hidden="true"></i>
+								</a>
+								<div class="outer">
+									<div class="inner">
+										<div class="inner-bar">
+											<div class="inner-bar-fill">
+												<div class="inner-handle"></div>
+											</div>
+										</div>
+									</div>
+									
+								</div>
+							</li>
+							<li class="download">
+								<a class="btn-downnload">
+									<i class="fa fa-download" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="playlist">
+								<a class="btn-playlist">
+									<i class="fa fa-list" aria-hidden="true"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<audio class="audio">
+						<source src="1.mp3">
+					</audio>
+                    <audio class="audio">
+                        <source src="2.mp3">
+                    </audio>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
