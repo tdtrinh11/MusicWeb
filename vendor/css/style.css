@@ -1,173 +1,300 @@
-.container{
-  background-color: #f3f3f3;
+*{
+    padding: 0;
+    margin: 0;
 }
 
-.mynav{
-	background-color: #f3f3f3;
+.container.car {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0!important;
 }
 
-.myText{
-	color: #d9b3ff;
-	font-weight: bold;
-	font-size: 20px;
-	margin-bottom: 5px;
+.container.container_chart {
+    padding-left: 0;
+    padding-right: 0;
 }
 
-.myText:hover{
-	color: #8080ff;
-	cursor: default;
+.container.container-bhm {
+    background: #FCFCFC;
 }
 
-a:hover{
-	text-decoration: none;
-	font-weight: bold;
-  opacity: 0.7;
+i.fa.fa-instagram {
+    color: #8842BC;
 }
 
-.myCaption:hover{
-	text-decoration: none;
+i.fa.fa-twitter-square {
+    color: #5DA9DD;
 }
 
-.captionIMG:hover{
-  opacity: 0.7;
+i.fa.fa-facebook-official {
+    color: #4267B2;
 }
 
-.myCaption{
-	text-align: center;
+a.contact {
+    padding: 10px 15px 10px 15px;
+    background: #8080801c;
+    width: 50px!important;
+    height: 50px!important;
+    margin-right: 6px;
+    color: white;
+    border-radius: 50%;
 }
 
-.media-heading{
-	font-size: 18px;
+a.contact:hover {
+    background: #8080804d;
 }
 
-.myMediaText:hover{
-	text-decoration: none;
+.row.bhm {
+    margin-left: 15px;
+    margin-right: 0px;
 }
 
-.captionText{
-	color: #a64dff;
+.top_name_song {
+    z-index: 5;
 }
 
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 0px 0px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+.top_name_song:hover {
+    color: #65509E;
 }
 
-.edit1{
-	margin: 16px 0px;
+.row.chart {
+    margin-left: 0;
+    margin-right: 0;
 }
 
-/* Set a style for all buttons */
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 0px 0px;
-  border: none;
-  cursor: pointer;
+.bhm_name_song:hover {
+    color: #65509E;
 }
 
-button:hover {
-  opacity: 0.8;
+.bhm_name_song:hover {
 }
 
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
+i.fa.fa-info:hover {
+    color: gray;
 }
 
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
+i.fa.fa-download:hover {
+    color: gray;
 }
 
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
+i.fa.fa-plus:hover {
+    color: #00000082;
 }
 
-.container1 {
-  padding: 16px;
+.lo2_play i.fa.fa-play-circle {
+    color: white!important;
 }
 
-span.psw {
-  float: right;
-  padding-top: 16px;
+.lo2_play {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
+.bhm_info {
+    font-size: 12px;
+    z-index: 5;
 }
 
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+.layout2_bhm.row {
+    opacity: 0;
+    width: 95%;
+    height: 100%;
+    position: absolute;
+    padding: 11px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #8080801f;
+    background: #473e623d;
+    visibility: hidden;
+    /* transition: 0.4s; */
 }
 
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
+.bhm_img img.img-responsive {
+    height: 100%;
 }
 
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
+.bhm_img {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
+.layout1_bhm {
+    width: 95%;
+    height: 100%;
+    position: absolute;
+    padding: 11px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #8080801f;
 }
 
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
+.one_bhm {
+    height: 51px;
+    position: relative;
+    cursor: pointer;
+    /* margin: 12px 5px 12px 0px; */
+    cursor: pointer;
+    margin-bottom: 15px;
 }
 
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
+.one_bhm:hover .layout2_bhm {
+    opacity: 1;
+    visibility: visible;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
+.container.text-left.tdbhm {
+    font-size: 25px;
+    color: #65509E;
+    font-weight: bold;
+    /* margin-top: 25px; */
+    background: #FCFCFC;
+    padding-top: 25px;
+    padding-left: 15px;
+}
+
+.container.text-right {
+    margin-bottom: 15px;
+    background: #FCFCFC;
+    margin-bottom: 0;
+    padding-bottom: 15px;
+    padding-right: 15px;
+}
+
+.container.text-left.tdchart {
+    font-size: 25px;
+    color: #65509E;
+    font-weight: bold;
+    background: #FCFCFC;
+    padding-top: 30px;
+    padding-left: 15px;
+}
+
+.btn.btn-outline-info {
+    background: #65509E!important;
+    border-color: #65509E!important;
+    color: white;
+    border-radius: 0px;
+}
+
+.btn.btn-outline-info:hover {
+    background: white!important;
+    border-color: #65509E!important;
+    color: #65509E;
+}
+
+.row.row_full_height {
+    height: 100%;
+    padding: 0px 0px 37px 30px;
+    padding-top: 0px;
+}
+
+.top_play {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    color: white;
+}
+
+.layout2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 11px 5px;
+    background: #51486aab;
+    border-radius: 6px;
+    opacity: 0;
+    visibility: visible;
+}
+
+.top_info {
+    color: white;
+    z-index: 5;
+    /* text-align: center; */
+    justify-content: center;
+    /* height: 100%; */
+    color: white;
+    /* line-height: 36px; */
+    /* font-size: 30px; */
+    font-size: 15px;
+}
+
+.top_img img.img-responsive {
+    height: 100%;
+}
+
+.top_img {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_number {
+    text-align: center;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    line-height: 36px;
+    font-size: 30px;
+}
+
+.layout1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 11px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #8080801f;
+}
+
+.realtime-list-song {
+    height: 100%;
+}
+
+ul.list-info {
+    height: 100%;
+    list-style: none;
+}
+
+.bhm_name_song {
+    font-weight: bold;
+}
+
+li.one_song_top{
+    height: 18%;
+    position: relative;
+    cursor:pointer;
+    margin: 12px;
+}
+
+li.one_song_top:hover .layout2{
+    opacity: 1;
+    visibility: visible;
+}
+
+.row.full_listen {
+    display: inline-block;
+}
+
+.chart{
+    background-image: url('http://localhost:81/MusicWeb_Quan/vendor/Image_User/bg-chart.jpg');
+    height: 400px;
+    background-size: cover;
+}
+@media only screen and (max-width: 1200px){
+    .top_info{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 768px){
+    .top_info{
+        font-size: 12px;
+    }
 }
