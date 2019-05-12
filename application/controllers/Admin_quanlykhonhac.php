@@ -10,15 +10,27 @@ class Admin_quanlykhonhac extends CI_Controller {
 
 	public function index()
 	{
+		// $this->load->model('Song');
+
+		// $tatcabaihat = $this->Song->getAllSong();
+
+		// $sotrang = $this->Song->soTrang(4);
+
+		// $dulieu = array(
+		// 	'tatcabaihat' => $tatcabaihat,
+		// 	'sotrang' => $sotrang
+		// );
+
+		// echo json_encode($dulieu);
+		$this->load->view('Admin_Quanlykhonhac');
+	}
+
+	public function laydulieu()
+	{
 		$this->load->model('Song');
 
 		$tatcabaihat = $this->Song->getAllSong();
 
-
-		// echo '<pre>';
-		// var_dump($tatcabaihat);
-		// echo '</pre>';
-		// die();
 		$sotrang = $this->Song->soTrang(4);
 
 		$dulieu = array(
@@ -26,13 +38,7 @@ class Admin_quanlykhonhac extends CI_Controller {
 			'sotrang' => $sotrang
 		);
 
-		// echo '<pre>';
-		// var_dump($dulieu);
-		// echo '</pre>';
-		// die();
-
-		// $this->load->view('Admin_QuanlyUser.php', $dulieu, FALSE);
-		$this->load->view('Admin_Quanlykhonhac', $dulieu, FALSE);
+		echo json_encode($dulieu);
 	}
 
 	public function ThemBaiHat()
@@ -44,12 +50,11 @@ class Admin_quanlykhonhac extends CI_Controller {
 	  	$audio = $this->input->post('audio');
   		$avt = $this->input->post('avt');
   		$loi_bai_hat = $this->input->post('loi_bai_hat');
-
 		$this->load->model('Song');
-		if($this->Song->addSong($ten_bai_hat,$ten_ca_si,$ten_nhac_si,$the_loai,$audio,$avt,$loi_bai_hat)){
-			$this->load->view('thanhcong');
-		}
-
+		// if($this->Song->addSong($ten_bai_hat,$ten_ca_si,$ten_nhac_si,$the_loai,$audio,$avt,$loi_bai_hat)){
+		// 	$this->load->view('thanhcong');
+		// }
+		echo $this->Song->addSong($ten_bai_hat,$ten_ca_si,$ten_nhac_si,$the_loai,$audio,$avt,$loi_bai_hat);
 	}
 
 	public function page($trang)
@@ -68,16 +73,33 @@ class Admin_quanlykhonhac extends CI_Controller {
 		$this->load->view('Admin_quanlykhonhac', $dulieu, FALSE);
 	}
 
-	public function XoaBaihat($sid)
+	public function pageSong()
 	{
+		$trang = $this->input->post('sotrang');
 		$this->load->model('Song');
-		if($this->Song->deleteSong($sid)){
-			$this->load->view('thanhcong');
-		}
+		$tatcabaihat = $this->Song->loadSongTheoTrang($trang,4);
+
+		$sotrang = $this->Song->soTrang(4);
+
+		$dulieu = array(
+			'tatcabaihat' => $tatcabaihat,
+			'sotrang' => $sotrang
+		);
+
+		echo json_encode($dulieu);
+
 	}
 
-	public function ChinhSuaBaiHat($sid)
+	public function XoaBaihat()
 	{
+		$sid = $this->input->post('sid');
+		$this->load->model('Song');
+		echo $this->Song->deleteSong($sid);
+	}
+
+	public function ChinhSuaBaiHat()
+	{
+		$sid = $this->input->post('sid');
 		$tbh_sua = $this->input->post('tbh_sua');
 		$tcs_sua = $this->input->post('tcs_sua');
 		$tns_sua = $this->input->post('tns_sua');
@@ -87,9 +109,7 @@ class Admin_quanlykhonhac extends CI_Controller {
 		$lyric_sua = $this->input->post('lyric_sua');
 
 		$this->load->model('Song');
-		if($this->Song->EditSong($sid,$tbh_sua,$tcs_sua,$tns_sua,$tl_sua,$audio_sua,$ha_sua,$lyric_sua)){
-			$this->load->view('thanhcong');
-		}
+		echo $this->Song->EditSong($sid,$tbh_sua,$tcs_sua,$tns_sua,$tl_sua,$audio_sua,$ha_sua,$lyric_sua);
 
 		
 	}

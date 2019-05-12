@@ -1,5 +1,42 @@
 * { margin: 0; padding: 0; }
 
+.toast {
+    position: fixed;
+    bottom: 45px;
+    right: 50px;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 3px;
+    font-weight: 800;
+    transform: translateY(91px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+.toast.toast_show{
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+div#cke_ckeditor {
+    width: 100%!important;
+}
+
+div#cke_ckeditor_lyric {
+    width: 100%!important;
+}
+
+audio {
+    height: 35px;
+}
+
+.admin-info .fa {
+    float: right;
+    margin-right: -11px;
+}
+
 .timkiemloi {
     position: fixed;
     top: 50%;
@@ -12,6 +49,7 @@
 
 table.table.dsbh {
     margin-top: 15px;
+    border: 1px solid #80808080;
 }
 
 p.tdqltcs {
@@ -175,7 +213,7 @@ html, body {
 
 body {
     overflow: hidden;
-    font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+    
     background-color: #E8E8E8;
     color: #cdcdcd;
     font-size: 12px;

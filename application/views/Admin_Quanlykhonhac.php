@@ -56,8 +56,8 @@
 				</li>
 				<li>
 					<a href="" class="menu-chinh">
-						<i class="fa fa-headphones"></i>
-						<span class="name-menu">Quản lý kho nhạc</span>
+						<i class="fa fa-user"></i>
+						<span class="name-menu">Quản lý người dùng</span>
 					</a>
 				</li>
 				<li>
@@ -68,20 +68,14 @@
 				</li>
 				<li>
 					<a href="" class="menu-chinh">
-						<i class="fa fa-headphones"></i>
-						<span class="name-menu">Quản lý kho nhạc</span>
+						<i class="fa fa-newspaper-o"></i>
+						<span class="name-menu">Quản lý sự kiện</span>
 					</a>
 				</li>
 				<li>
 					<a href="" class="menu-chinh">
-						<i class="fa fa-headphones"></i>
-						<span class="name-menu">Quản lý kho nhạc</span>
-					</a>
-				</li>
-				<li>
-					<a href="" class="menu-chinh">
-						<i class="fa fa-headphones"></i>
-						<span class="name-menu">Quản lý kho nhạc</span>
+						<i class="fa fa-bar-chart"></i>
+						<span class="name-menu">Thống kê</span>
 					</a>
 				</li>
 
@@ -134,7 +128,7 @@
 												<div class="btn btn-danger them" data-toggle="modal" data-target="#modalThem">Thêm <i class="fa fa-plus" aria-hidden="true"></i></div>
 											</div>
 											<div class="col-7 col-xl-3 col-sm-5 col-md-5 col-lg-3 input_tim_bai_hat">
-												<input type="text" class="form-control" name="song_name" placeholder="Nhập tên bài hát">
+												<input type="text" class="form-control" name="song_name" placeholder="Name song or singer">
 												
 											</div>
 											<div class="col-1 col-xl-1 col-sm-1 col-md-1 col-lg-1 tim_bai_hat">
@@ -155,25 +149,7 @@
 														</tr>
 													</thead>
 													<tbody>
-														<?php foreach($tatcabaihat as $key => $value):?>
-															<tr>
-																<td class="sid" hidden="true"><?= $value['SID']?></td>
-																<td class="ten_bai_hat"><?= $value['song_name']?></td>
-																<td class="ten_ca_si"><?= $value['singer']?></td>
-																<td class="ten_nhac_si" hidden="true"><?= $value['artist']?></td>
-																<td class="the_loai"><?= $value['type']?></td>
-																<td class="hinh_anh"><img src="<?= base_url(); ?>vendor/Image/<?= $value['URL_IMG']?>" class="hinh_anh_bai_hat"></td>
-																<td class="audio">
-																	<audio src="<?= base_url(); ?>vendor/Music/<?= $value['URL']?>" loop controls controlslist="nodownload"></audio>
-																</td>
-																<td class="loi_bai_hat" hidden="true"><?= $value['lyric']?></td>
-																<td colspan="3" class="chuc_nang">
-																	<div class="btn btn-outline-primary chinh_sua" data-toggle="modal" data-target="#modalChinhSua">Chỉnh sửa <i class="fa fa-pencil" aria-hidden="true"></i></div>
-																	<div class="btn btn-outline-success chi_tiet" data-toggle="modal" data-target="#modalChiTiet">Chi tiết <i class="fa fa-info" aria-hidden="true"></i></div>
-																	<a class="btn btn-outline-danger xoa" href="<?= base_url(); ?>index.php/Admin_quanlykhonhac/XoaBaiHat/<?= $value['SID']?>">Xóa <i class="fa fa-times" aria-hidden="true"></i></a>
-																</td>
-															</tr>
-														<?php endforeach?>
+														
 													</tbody>
 												</table>
 											</div>
@@ -182,19 +158,9 @@
 											<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 phantrang">
 												<nav aria-label="Page navigation example">
 													<ul class="pagination justify-content-center">
-														<li class="page-item">
-															<a href="<?= base_url();?>index.php/Admin_quanlykhonhac/page/<?= $trangHienTai - 1?>" class="page-link">Previous</a>
-														</li>
-														<?php for($i = 0; $i < $sotrang; $i++) {?>
-															<?php if($i+1 == $trangHienTai) {?>
-																<li class="page-item active"><a class="page-link" href="<?= base_url(); ?>index.php/Admin_quanlykhonhac/page/<?= $i+1 ?>"><?= $i+1?></a></li>
-															<?php } else {?>
-																<li class="page-item"><a class="page-link" href="<?= base_url(); ?>index.php/Admin_quanlykhonhac/page/<?= $i+1 ?>"><?= $i+1?></a></li>
-															<?php } ?>
-														<?php } ?>
-														<li class="page-item">
-															<a href="<?= base_url();?>index.php/Admin_quanlykhonhac/page/<?= $trangHienTai + 1?>" class="page-link">Next</a>
-														</li>
+														
+														
+														
 													</ul>
 												</nav>
 											</div>
@@ -227,13 +193,13 @@
 							<div class="themnhac aaa">
 								<!-- CHÀO MỪNG BẠN ĐẾN VỚI TRANG QUẢN TRỊ !!! -->
 								<div class="container">
-									<form action="<?= base_url(); ?>index.php/Admin_quanlykhonhac/ThemBaiHat" method="POST" role="form">
+									<form action="" method="POST" role="form" id="formThem">
 										<div class="row form_tenbh">
 											<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 												<label for="">Bài hát</label>
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input type="text" class="form-control"  name="ten_bai_hat" placeholder="Enter name">
+												<input type="text" class="form-control add_tbh" required name="ten_bai_hat" placeholder="Tên bài hát">
 											</div>
 										</div>
 										<div class="row form_tencs">
@@ -241,7 +207,7 @@
 												<label for="">Ca sĩ</label>
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input type="text" class="form-control"  name="ten_ca_si" placeholder="Enter name">
+												<input type="text" class="form-control add_tcs" required name="ten_ca_si" placeholder="Tên ca sĩ">
 											</div>
 										</div>
 										
@@ -250,7 +216,7 @@
 												<label for="">Nhạc sĩ</label>
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input type="text" class="form-control"  name="ten_nhac_si" placeholder="Enter name">
+												<input type="text" class="form-control add_tns" required name="ten_nhac_si" placeholder="Tên nhạc sĩ">
 											</div>
 										</div>
 										<div class="row form_theloai">
@@ -258,7 +224,7 @@
 												<label for="">Thể loại</label>
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input type="text" class="form-control"  name="the_loai" placeholder="Enter name">
+												<input type="text" class="form-control add_tl" required name="the_loai" placeholder="Thể loại">
 											</div>
 										</div>
 										<div class="row form_audio">
@@ -266,7 +232,7 @@
 												<label for="">Audio</label>
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input type="file" class="form-control"  name="audio" placeholder="Choose image">
+												<input type="file" class="form-control add_audio" required name="audio" placeholder="Choose image">
 											</div>
 										</div>
 										<div class="row form_ha">
@@ -274,22 +240,23 @@
 												<label for="">Hình ảnh</label>
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input type="file" class="form-control"  name="avt" placeholder="Choose image">
+												<input type="file" class="form-control add_image" required name="avt" placeholder="Choose image">
 											</div>
 										</div>
 										<div class="row form_lbh">
 											<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 												<label for="">Lời bài hát</label>
 											</div>
-											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<textarea  rows="5" cols="" id="ckeditor" name="loi_bai_hat"></textarea>
+											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9"> 
+												<textarea  rows="5" cols="" class="form-control add_lyric" id="ckeditor_lyric" required name="loi_bai_hat" placeholder="Lời bài hát"></textarea>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input class="btn btn-success" value="Submit" type="submit"></input>
+												<!-- <input class="btn btn-success addSong" value="Submit" type="submit"></input> -->
+												<div class="btn btn-success addSong">Submit</div>
 											</div>
 											
 										</div>
@@ -329,7 +296,8 @@
 												<label for="">Bài hát</label>
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input type="text" class="form-control tbh_sua" name="tbh_sua" placeholder="Enter name">
+												<input type="hidden" name="" class="SID">
+												<input type="text" class="form-control tbh_sua" name="tbh_sua" placeholder="Enter name" required>
 											</div>
 										</div>
 										<div class="row form_tencs">
@@ -337,7 +305,7 @@
 												<label for="">Ca sĩ</label>
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input type="text" class="form-control tcs_sua"  name="tcs_sua" placeholder="Enter name">
+												<input type="text" class="form-control tcs_sua"  name="tcs_sua" placeholder="Enter name" required>
 											</div>
 										</div>
 										
@@ -346,7 +314,7 @@
 												<label for="">Nhạc sĩ</label>
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input type="text" class="form-control tns_sua"  name="tns_sua" placeholder="Enter name">
+												<input type="text" class="form-control tns_sua"  name="tns_sua" placeholder="Enter name" required>
 											</div>
 										</div>
 										<div class="row form_theloai">
@@ -354,7 +322,7 @@
 												<label for="">Thể loại</label>
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input type="text" class="form-control tl_sua"  name="tl_sua" placeholder="Enter name">
+												<input type="text" class="form-control tl_sua"  name="tl_sua" placeholder="Enter name" required>
 											</div>
 										</div>
 										<div class="row form_audio">
@@ -380,14 +348,14 @@
 												<label for="">Lời bài hát</label>
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<textarea class="bl lyric_sua" rows="5" cols="" id="ckeditor" name="lyric_sua"></textarea>
+												<textarea class="bl lyric_sua form-control" rows="5" cols="" name="lyric_sua" value="Đây là lời bài hát" required></textarea>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
 											</div>
 											<div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-												<input class="btn btn-success" value="Edit" type="submit"></input>
+												<button class="btn btn-success editSong">Submit</button>
 											</div>
 											
 										</div>
@@ -497,6 +465,11 @@
 		</div>
 		<!-- end quản lý kho nhạc -->
 	</div>
+	<div class="toast" style="background:#28A745">
+    <div class="toast-body">
+      Thêm thành công !!!
+    </div>
+  </div>
 	<!-- end phần nội dung -->
 </body>
 </html>

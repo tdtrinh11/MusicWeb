@@ -27,6 +27,8 @@ $(document).ready(function() {
 	// $('.them').click(function(event) {
 	// 	$('.modal_them').addClass('fade');
 	// });
+	// 
+	$('.pag_khonhac:first').addClass('active');
 	$('.chinh_sua').click(function(event) {
 		$('.modal_sua').addClass('fade');
 	});
@@ -85,9 +87,9 @@ $(document).ready(function() {
 
     $(document).on('click', '.chinh_sua', function(event) {
     	event.preventDefault();
-    	console.log($(this).parent('.chuc_nang').parent('tr').find('.sid'));
+    	$(this).parent('.chuc_nang').parent('tr').parent('tbody').children('tr').remove('chinhsua');
+    	$(this).parent('.chuc_nang').parent('tr').addClass('chinhsua');
     	var sid = $(this).parent('.chuc_nang').parent('tr').find('.sid')[0].innerText;
-    	console.log(sid);
     	var loi_bai_hat = $(this).parent('.chuc_nang').parent('tr').find('.loi_bai_hat')[0].innerText;
     	var audio = $(this).parent('.chuc_nang').parent('tr').find('audio')[0].src;
     	var hinh_anh = $(this).parent('.chuc_nang').parent('tr').find('img')[0].src;
@@ -101,10 +103,12 @@ $(document).ready(function() {
     	$('.tns_sua').val(ten_nhac_si);
     	$('.tl_sua').val(the_loai);
     	$('.lyric_sua').val(loi_bai_hat);
-    	console.log($('.audio_bd')[0]);
+    	$('.SID').val(sid);
     	$('.audio_bd')[0].src = audio;
+    	$('.audio_sua').val('');
     	$('.img_bd')[0].src = hinh_anh;
-    	$('.themnhac.chinhsua').find('form')[0]['attributes']['action'].value = "http://127.0.0.1:4001/MusicWeb/index.php/Admin_quanlykhonhac/ChinhSuaBaiHat/"+sid;
+    	$('.ha_sua').val('');
+    	// $('.themnhac.chinhsua').find('form')[0]['attributes']['action'].value = "http://localhost:81/MusicWeb/Admin_quanlykhonhac/ChinhSuaBaiHat/"+sid;
     });
 
     $(document).on('click', '.chi_tiet', function(event) {
@@ -125,5 +129,18 @@ $(document).ready(function() {
     	$('.lbh_ct')[0].innerText = loi_bai_hat;
 
     	
+    });
+
+    $(document).on('change', 'input.audio_sua', function(event) {
+    	event.preventDefault();
+    	src = "http://localhost:81/MusicWeb/vendor/Music/"+$(this).val().split('\\')['2'];
+    	$(this).prev('audio').attr('src', src);
+    });
+
+    $(document).on('change', 'input.ha_sua', function(event) {
+    	event.preventDefault();
+    	src = "http://localhost:81/MusicWeb/vendor/Image/"+$(this).val().split('\\')['2'];
+    	console.log(src);
+    	$(this).prev('img').attr('src', src);
     });
 });

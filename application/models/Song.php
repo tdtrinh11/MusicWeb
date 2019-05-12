@@ -21,7 +21,13 @@ class Song extends CI_Model {
 		$dulieu['URL_IMG'] = $avt;
 		$dulieu['lyric'] = $loi_bai_hat;
 		$dulieu['download_number'] = 0;
-		return $this->db->insert('Song', $dulieu);
+		$this->db->insert('Song', $dulieu);
+		if($this->db->affected_rows() > 0){
+			echo 'thanhcong';
+		}
+		else{
+			echo 'thatbai';
+		}
 	}
 
 	public function getAllSong()
@@ -53,7 +59,14 @@ class Song extends CI_Model {
 	public function deleteSong($sid)
 	{
 		$sql = 'delete from Song where sid ='.$sid;
-		return $this->db->query($sql);
+		$this->db->query($sql);
+
+		if($this->db->affected_rows() > 0){
+			echo 'thanhcong';
+		}
+		else{
+			echo 'thatbai';
+		}
 	}
 
 	public function EditSong($sid,$tbh_sua,$tcs_sua,$tns_sua,$tl_sua,$audio_sua,$ha_sua,$lyric_sua)
@@ -61,25 +74,33 @@ class Song extends CI_Model {
 
 		if(empty($audio_sua) && empty($ha_sua)){
 			$sql = "update Song set song_name='".$tbh_sua."',artist='".$tns_sua."',singer='".$tcs_sua."',type='".$tl_sua."',lyric='".$lyric_sua."' where sid='".$sid."'";
-			return $this->db->query($sql);
+			$this->db->query($sql);
 		}
 		elseif(empty($audio_sua) && empty($ha_sua) == false){
 			$sql = "update Song set song_name='".$tbh_sua."',artist='".$tns_sua."',singer='".$tcs_sua."',type='".$tl_sua."',lyric='".$lyric_sua."',URL_IMG='".$ha_sua."' where sid='".$sid."'";
-			return $this->db->query($sql);
+			$this->db->query($sql);
 		}
 		elseif(empty($ha_sua) && empty($audio_sua) == false){
 			$sql = "update Song set song_name='".$tbh_sua."',artist='".$tns_sua."',singer='".$tcs_sua."',type='".$tl_sua."',lyric='".$lyric_sua."',URL='".$audio_sua."' where sid='".$sid."'";
-			return $this->db->query($sql);
+			$this->db->query($sql);
 		}
 		else{
 			$sql = "update Song set song_name='".$tbh_sua."',artist='".$tns_sua."',singer='".$tcs_sua."',type='".$tl_sua."',lyric='".$lyric_sua."',URL='".$audio_sua."',URL='".$audio_sua."' where sid='".$sid."'";
-			return $this->db->query($sql);
+			$this->db->query($sql);
 		}
+
+		if($this->db->affected_rows() > 0){
+			echo 'thanhcong';
+		}
+		else{
+			echo 'thatbai';
+		}
+
 	}
 
 	public function findByName($song_name)
 	{
-		$sql = "select * from Song where song_name LIKE N'%".$song_name."%'";
+		$sql = "select * from Song where song_name LIKE N'%".$song_name."%' OR singer LIKE N'".$song_name."%'";
 		$dl_tk = $this->db->query($sql);
 
 		$dl_tk = $dl_tk->result_array();
