@@ -3,7 +3,7 @@
 
 5 Member:
 
-+ tdtrinh11 - Trịnh Tiến Đạt
++ tdtrinh11 - Trịnh Tiến Đạt(bitch)
 + doandaitien - Đoàn Đại Tiến
 + dungnh165877 - Nguyễn Huy Dũng
 + quanngoc181 - Vương Ngọc Quân
