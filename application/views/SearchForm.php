@@ -114,7 +114,7 @@
   <p>
     <br>Một sản phẩm của OCS TEAM <br>
     Địa chỉ: Số 1 Đại Cồ Việt, Hai Bà Trưng, Hà Nội <br>
-    Điện thoại: 0355111616 <br>
+    Điện thoại: 0123456789 <br>
     Email: ocsteambk@gmail.com <br><br>
     <a href="https://www.facebook.com/"><i class='fab fa-facebook' style='font-size:24px'></i> </a>
     <a href="https://twitter.com/"><i class='fab fa-twitter-square' style='font-size:24px'></i> </a>
