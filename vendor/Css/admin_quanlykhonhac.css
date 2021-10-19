@@ -1,5 +1,19 @@
 * { margin: 0; padding: 0; }
 
+.timkiemloi {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    color: black;
+    font-size: 25px;
+    font-family: 'Nunito', sans-serif;
+    transform: translate(-18%,-50%);
+}
+
+table.table.dsbh {
+    margin-top: 15px;
+}
+
 p.tdqltcs {
     font-size: 18px;
     font-family: 'Nunito', sans-serif;
@@ -70,6 +84,7 @@ img.anhcs {
 
 .chinh_sua,.chi_tiet,.xoa {
     font-size: 12px;
+    margin-right: 2px;
 }
 
 .phantrang {
@@ -84,6 +99,7 @@ td.chuc_nang {
 
 td.audio {
     text-align: center;
+    width: 300px!important;
 }
 
 td.hinh_anh {
@@ -141,8 +157,7 @@ a.nav-link {}
 .tab-content {
     background-color: white;
     color: gray;
-    height: 519px;
-    overflow-y: scroll;
+    height: 550px;
 }
 
 p.tdqlkn {
@@ -507,4 +522,25 @@ input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width
 
 .fade{
     transition: opacity .15s linear;
+}
+
+@media only screen and (min-width: 576px) and (max-width: 760px){
+    .container {
+        max-width: 700px!important;
+    }
+}
+
+@media only screen and (max-width: 580px){
+    audio{
+        width: 150px;
+    }
+}
+
+@media only screen and (max-width: 1090px){
+    audio{
+        width: 150px;
+    }
+    .tab-content{
+        overflow-y: scroll;
+    }
 }
